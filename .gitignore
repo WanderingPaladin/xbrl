@@ -1,0 +1,10 @@
+jobs/
+.stb-sources/
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+*.log
+.DS_Store
+**/.DS_Store
+authoring/_mutants/
+authoring/_gold.xml

@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<linkbase xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xbrldt="http://www.xbrl.org/2005/xbrldt" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <roleRef roleURI="http://lattice.example/role/2025/statement/net-assets" xlink:type="simple" xlink:href="lopt-2025-roles.xsd#stmt_net_assets" />
+  <roleRef roleURI="http://lattice.example/role/2025/cube/scheme" xlink:type="simple" xlink:href="lopt-2025-roles.xsd#cube_scheme" />
+  <roleRef roleURI="http://lattice.example/role/2025/cube/scheme-members" xlink:type="simple" xlink:href="lopt-2025-roles.xsd#cube_scheme_members" />
+  <roleRef roleURI="http://lattice.example/role/2025/cube/flow" xlink:type="simple" xlink:href="lopt-2025-roles.xsd#cube_flow" />
+  <roleRef roleURI="http://lattice.example/role/2025/cube/forbidden-contributions" xlink:type="simple" xlink:href="lopt-2025-roles.xsd#cube_forbidden_contributions" />
+  <roleRef roleURI="http://lattice.example/role/2025/cube/admin" xlink:type="simple" xlink:href="lopt-2025-roles.xsd#cube_admin" />
+  <roleRef roleURI="http://lattice.example/role/2025/cube/benefits-exclusion" xlink:type="simple" xlink:href="lopt-2025-roles.xsd#cube_benefits_exclusion" />
+  <roleRef roleURI="http://lattice.example/role/2025/defaults" xlink:type="simple" xlink:href="lopt-2025-roles.xsd#defaults" />
+  <arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/all" xlink:type="simple" xlink:href="lib/xbrldt.xsd#all" />
+  <arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-default" xlink:type="simple" xlink:href="lib/xbrldt.xsd#dimension-default" />
+  <arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple" xlink:href="lib/xbrldt.xsd#dimension-domain" />
+  <arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="lib/xbrldt.xsd#domain-member" />
+  <arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="lib/xbrldt.xsd#hypercube-dimension" />
+  <definitionLink xlink:type="extended" xlink:role="http://lattice.example/role/2025/statement/net-assets">
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_AdminExpenses" xlink:label="lopt_AdminExpenses" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_BenefitsPaid" xlink:label="lopt_BenefitsPaid" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_ChangeInNetAssets" xlink:label="lopt_ChangeInNetAssets" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_Contributions" xlink:label="lopt_Contributions" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_CubeAdmin" xlink:label="lopt_CubeAdmin" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_CubeFlow" xlink:label="lopt_CubeFlow" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_CubeForbiddenContributions" xlink:label="lopt_CubeForbiddenContributions" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_CubeScheme" xlink:label="lopt_CubeScheme" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_EmployerContributions" xlink:label="lopt_EmployerContributions" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_InvestmentReturn" xlink:label="lopt_InvestmentReturn" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_NetAssets" xlink:label="lopt_NetAssets" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_StatementAbstract" xlink:label="lopt_StatementAbstract" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_StatementAbstract" xlink:to="lopt_NetAssets" order="1.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_StatementAbstract" xlink:to="lopt_ChangeInNetAssets" order="2.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_ChangeInNetAssets" xlink:to="lopt_Contributions" order="3.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_ChangeInNetAssets" xlink:to="lopt_BenefitsPaid" order="4.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_ChangeInNetAssets" xlink:to="lopt_InvestmentReturn" order="5.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_ChangeInNetAssets" xlink:to="lopt_AdminExpenses" order="6.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_Contributions" xlink:to="lopt_EmployerContributions" order="7.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="lopt_NetAssets" xlink:to="lopt_CubeScheme" order="8.0" use="optional" priority="0" xbrldt:contextElement="segment" xbrldt:closed="true" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="lopt_ChangeInNetAssets" xlink:to="lopt_CubeFlow" order="9.0" use="optional" priority="0" xbrldt:targetRole="http://lattice.example/role/2025/cube/flow" xbrldt:contextElement="segment" xbrldt:closed="false" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="lopt_Contributions" xlink:to="lopt_CubeForbiddenContributions" order="10.0" use="optional" priority="0" xbrldt:targetRole="http://lattice.example/role/2025/cube/forbidden-contributions" xbrldt:contextElement="segment" xbrldt:closed="true" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="lopt_AdminExpenses" xlink:to="lopt_CubeAdmin" order="11.0" use="optional" priority="0" xbrldt:targetRole="http://lattice.example/role/2025/cube/admin" xbrldt:contextElement="scenario" xbrldt:closed="false" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="lopt_EmployerContributions" xlink:to="lopt_CubeScheme" order="12.0" use="optional" priority="0" xbrldt:targetRole="http://lattice.example/role/2025/cube/scheme" xbrldt:contextElement="segment" xbrldt:closed="true" />
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://lattice.example/role/2025/cube/scheme">
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_CubeScheme" xlink:label="lopt_CubeScheme" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_MemberClassDimension" xlink:label="lopt_MemberClassDimension" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_SchemeDimension" xlink:label="lopt_SchemeDimension" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="lopt_CubeScheme" xlink:to="lopt_SchemeDimension" order="1.0" use="optional" priority="0" xbrldt:targetRole="http://lattice.example/role/2025/cube/scheme-members" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="lopt_CubeScheme" xlink:to="lopt_MemberClassDimension" order="2.0" use="optional" priority="0" xbrldt:targetRole="http://lattice.example/role/2025/cube/flow" />
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://lattice.example/role/2025/cube/scheme-members">
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_CashBalance" xlink:label="lopt_CashBalance" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_HybridGroup" xlink:label="lopt_HybridGroup" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_MixedBenefit" xlink:label="lopt_MixedBenefit" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_Occupational" xlink:label="lopt_Occupational" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_Personal" xlink:label="lopt_Personal" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_SchemeDimension" xlink:label="lopt_SchemeDimension" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_SchemeDomain" xlink:label="lopt_SchemeDomain" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="lopt_SchemeDimension" xlink:to="lopt_SchemeDomain" order="1.0" use="optional" priority="0" xbrldt:usable="false" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_SchemeDomain" xlink:to="lopt_Occupational" order="2.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_SchemeDomain" xlink:to="lopt_Personal" order="3.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_SchemeDomain" xlink:to="lopt_HybridGroup" order="4.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_HybridGroup" xlink:to="lopt_CashBalance" order="5.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_HybridGroup" xlink:to="lopt_MixedBenefit" order="6.0" use="optional" priority="0" />
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://lattice.example/role/2025/cube/flow">
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_Active" xlink:label="lopt_Active" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_CubeFlow" xlink:label="lopt_CubeFlow" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_Deferred" xlink:label="lopt_Deferred" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_Dependant" xlink:label="lopt_Dependant" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_Domestic" xlink:label="lopt_Domestic" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_EEA" xlink:label="lopt_EEA" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_GeoDomain" xlink:label="lopt_GeoDomain" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_GeographyDimension" xlink:label="lopt_GeographyDimension" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_MemberClassDimension" xlink:label="lopt_MemberClassDimension" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_MemberClassDomain" xlink:label="lopt_MemberClassDomain" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_Other" xlink:label="lopt_Other" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_Overseas" xlink:label="lopt_Overseas" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_Pensioner" xlink:label="lopt_Pensioner" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_RestOfWorld" xlink:label="lopt_RestOfWorld" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_SchemeDimension" xlink:label="lopt_SchemeDimension" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="lopt_CubeFlow" xlink:to="lopt_SchemeDimension" order="1.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="lopt_CubeFlow" xlink:to="lopt_GeographyDimension" order="2.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="lopt_CubeFlow" xlink:to="lopt_MemberClassDimension" order="3.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="lopt_GeographyDimension" xlink:to="lopt_GeoDomain" order="4.0" use="optional" priority="0" xbrldt:usable="false" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_GeoDomain" xlink:to="lopt_Domestic" order="5.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_GeoDomain" xlink:to="lopt_Overseas" order="6.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_Overseas" xlink:to="lopt_EEA" order="7.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_Domestic" xlink:to="lopt_RestOfWorld" order="8.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="lopt_MemberClassDimension" xlink:to="lopt_MemberClassDomain" order="9.0" use="optional" priority="0" xbrldt:usable="false" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_MemberClassDomain" xlink:to="lopt_Active" order="10.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_MemberClassDomain" xlink:to="lopt_Deferred" order="11.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_MemberClassDomain" xlink:to="lopt_Pensioner" order="12.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_MemberClassDomain" xlink:to="lopt_Dependant" order="13.0" use="optional" priority="2" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_MemberClassDomain" xlink:to="lopt_Dependant" order="14.0" use="prohibited" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_GeoDomain" xlink:to="lopt_Other" order="15.0" use="optional" priority="0" />
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://lattice.example/role/2025/cube/forbidden-contributions">
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_CubeForbiddenContributions" xlink:label="lopt_CubeForbiddenContributions" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_MemberClassDimension" xlink:label="lopt_MemberClassDimension" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_Pensioner" xlink:label="lopt_Pensioner" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="lopt_CubeForbiddenContributions" xlink:to="lopt_MemberClassDimension" order="1.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="lopt_MemberClassDimension" xlink:to="lopt_Pensioner" order="2.0" use="optional" priority="0" />
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://lattice.example/role/2025/cube/benefits-exclusion">
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_CubeBenefitsExclusion" xlink:label="lopt_CubeBenefitsExclusion" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_GeographyDimension" xlink:label="lopt_GeographyDimension" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_Personal" xlink:label="lopt_Personal" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_RestOfWorld" xlink:label="lopt_RestOfWorld" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_SchemeDimension" xlink:label="lopt_SchemeDimension" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="lopt_CubeBenefitsExclusion" xlink:to="lopt_SchemeDimension" order="1.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="lopt_CubeBenefitsExclusion" xlink:to="lopt_GeographyDimension" order="2.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="lopt_SchemeDimension" xlink:to="lopt_Personal" order="3.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="lopt_GeographyDimension" xlink:to="lopt_RestOfWorld" order="4.0" use="optional" priority="0" />
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://lattice.example/role/2025/cube/admin">
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_CubeAdmin" xlink:label="lopt_CubeAdmin" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_CurrencyDimension" xlink:label="lopt_CurrencyDimension" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_CurrencyDomain" xlink:label="lopt_CurrencyDomain" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_PresentationCurrency" xlink:label="lopt_PresentationCurrency" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_SettlementCurrency" xlink:label="lopt_SettlementCurrency" />
+    <loc xlink:type="locator" xlink:href="lopt-2025-ext.xsd#ext_Other" xlink:label="ext_Other" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="lopt_CubeAdmin" xlink:to="lopt_CurrencyDimension" order="1.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="lopt_CurrencyDimension" xlink:to="lopt_CurrencyDomain" order="2.0" use="optional" priority="0" xbrldt:usable="false" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_CurrencyDomain" xlink:to="lopt_PresentationCurrency" order="3.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_CurrencyDomain" xlink:to="lopt_SettlementCurrency" order="4.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="lopt_CurrencyDomain" xlink:to="ext_Other" order="5.0" use="optional" priority="0" />
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://lattice.example/role/2025/defaults">
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_Active" xlink:label="lopt_Active" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_CurrencyDimension" xlink:label="lopt_CurrencyDimension" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_Domestic" xlink:label="lopt_Domestic" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_GeographyDimension" xlink:label="lopt_GeographyDimension" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_MemberClassDimension" xlink:label="lopt_MemberClassDimension" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_Personal" xlink:label="lopt_Personal" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_PresentationCurrency" xlink:label="lopt_PresentationCurrency" />
+    <loc xlink:type="locator" xlink:href="lopt-2025.xsd#lopt_SchemeDimension" xlink:label="lopt_SchemeDimension" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-default" xlink:from="lopt_SchemeDimension" xlink:to="lopt_Personal" order="1.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-default" xlink:from="lopt_GeographyDimension" xlink:to="lopt_Domestic" order="2.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-default" xlink:from="lopt_CurrencyDimension" xlink:to="lopt_PresentationCurrency" order="3.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-default" xlink:from="lopt_MemberClassDimension" xlink:to="lopt_Active" order="4.0" use="optional" priority="0" />
+  </definitionLink>
+</linkbase>

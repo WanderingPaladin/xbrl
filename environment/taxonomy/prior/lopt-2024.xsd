@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://lattice.example/lopt/2024-01-31" elementFormDefault="qualified">
+  <annotation>
+    <appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="lopt-2024-def.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+    </appinfo>
+  </annotation>
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" />
+  <import namespace="http://www.xbrl.org/2005/xbrldt" schemaLocation="lib/xbrldt.xsd" />
+  <element name="StatementAbstract" id="lopt24_StatementAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="NetAssets" id="lopt24_NetAssets" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant" />
+  <element name="ChangeInNetAssets" id="lopt24_ChangeInNetAssets" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />
+  <element name="Contributions" id="lopt24_Contributions" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />
+  <element name="EmployerContributions" id="lopt24_EmployerContributions" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />
+  <element name="BenefitsPaid" id="lopt24_BenefitsPaid" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />
+  <element name="InvestmentReturn" id="lopt24_InvestmentReturn" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />
+  <element name="AdminExpenses" id="lopt24_AdminExpenses" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />
+  <element name="CubeScheme" id="lopt24_CubeScheme" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="CubeFlow" id="lopt24_CubeFlow" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="SchemeDimension" id="lopt24_SchemeDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="GeographyDimension" id="lopt24_GeographyDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="SchemeDomain" id="lopt24_SchemeDomain" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="Occupational" id="lopt24_Occupational" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="Personal" id="lopt24_Personal" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="GeoDomain" id="lopt24_GeoDomain" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="Domestic" id="lopt24_Domestic" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="Overseas" id="lopt24_Overseas" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="EEA" id="lopt24_EEA" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="RestOfWorld" id="lopt24_RestOfWorld" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="Other" id="lopt24_Other" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+</schema>

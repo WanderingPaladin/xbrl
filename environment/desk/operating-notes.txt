@@ -1,0 +1,13 @@
+Lattice filing desk — 2025 authority
+
+1. The board change memo is the approved 2025 business delta.
+2. The 2024 package controls relationships the memo did not change, including
+   how this desk already encoded a DRS.
+3. filing-gate is the production diagnostic for a candidate instance. It is
+   not a complete statement of the approved 2025 model.
+4. Marked filings illustrate known cases. They do not define the complete
+   model. Accepted AdminExpenses examples explicitly include a valid member
+   class.
+
+The unfinished current package is not approved. Sources agree when read
+together; none of them is the finished zip.

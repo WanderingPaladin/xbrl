@@ -1,0 +1,346 @@
+[
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}StatementAbstract",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}NetAssets",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": false,
+    "nillable": true,
+    "periodType": "instant"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}ChangeInNetAssets",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": false,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}Contributions",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": false,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}EmployerContributions",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": false,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}BenefitsPaid",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": false,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}InvestmentReturn",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": false,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}AdminExpenses",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": false,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}CubeScheme",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://xbrl.org/2005/xbrldt}hypercubeItem",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}CubeFlow",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://xbrl.org/2005/xbrldt}hypercubeItem",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}CubeForbiddenContributions",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://xbrl.org/2005/xbrldt}hypercubeItem",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}CubeAdmin",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://xbrl.org/2005/xbrldt}hypercubeItem",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}CubeBenefitsExclusion",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://xbrl.org/2005/xbrldt}hypercubeItem",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}CubeLegacy",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://xbrl.org/2005/xbrldt}hypercubeItem",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}SchemeDimension",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://xbrl.org/2005/xbrldt}dimensionItem",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}GeographyDimension",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://xbrl.org/2005/xbrldt}dimensionItem",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}MemberClassDimension",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://xbrl.org/2005/xbrldt}dimensionItem",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}CurrencyDimension",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://xbrl.org/2005/xbrldt}dimensionItem",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}ValuationDimension",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://xbrl.org/2005/xbrldt}dimensionItem",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}SchemeDomain",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}Occupational",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}Personal",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}HybridGroup",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}CashBalance",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}MixedBenefit",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}GeoDomain",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}Domestic",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}Overseas",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}EEA",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}RestOfWorld",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}Other",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}MemberClassDomain",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}Active",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}Deferred",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}Pensioner",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}Dependant",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}CurrencyDomain",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}PresentationCurrency",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}SettlementCurrency",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}ValuationDomain",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}Ongoing",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/2025-01-31}Windup",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  },
+  {
+    "qname": "{http://lattice.example/lopt/ext/2025-01-31}Other",
+    "type": "{http://www.xbrl.org/2003/instance}stringItemType",
+    "substitutionGroup": "{http://www.xbrl.org/2003/instance}item",
+    "abstract": true,
+    "nillable": true,
+    "periodType": "duration"
+  }
+]

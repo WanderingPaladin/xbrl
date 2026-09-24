@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:link="http://www.xbrl.org/2003/linkbase" targetNamespace="http://lattice.example/lopt/roles/2024" elementFormDefault="qualified">
+  <annotation>
+    <appinfo>
+      <link:roleType id="stmt_net_assets" roleURI="http://lattice.example/role/2024/statement/net-assets">
+        <link:definition>LOPT 2024 stmt_net_assets</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="cube_scheme" roleURI="http://lattice.example/role/2024/cube/scheme">
+        <link:definition>LOPT 2024 cube_scheme</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="cube_scheme_members" roleURI="http://lattice.example/role/2024/cube/scheme-members">
+        <link:definition>LOPT 2024 cube_scheme_members</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="cube_flow" roleURI="http://lattice.example/role/2024/cube/flow">
+        <link:definition>LOPT 2024 cube_flow</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="defaults" roleURI="http://lattice.example/role/2024/defaults">
+        <link:definition>LOPT 2024 defaults</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+    </appinfo>
+  </annotation>
+</schema>

@@ -1,0 +1,58 @@
+Lattice Occupational Pensions Taxonomy — 2025 change memo
+Status: approved by the taxonomy board, 12 Jan 2025
+From: taxonomy board
+To: filing desk / DTS maintainers
+
+This is the approved delta from the 2024 DTS. It is not a linkbase. The 2024
+definition linkbase remains the last accepted DRS for that year; it is not
+the 2025 DRS.
+
+Scheme type
+Occupational is the default scheme type from 2025. Personal stays a reportable
+member. Hybrid is a grouping heading only — Cash Balance and Mixed Benefit sit
+under it and are the reportable hybrid members. Do not report the heading.
+
+Geography
+Domestic remains the default. Overseas is a grouping heading only; EEA and
+Rest of World are the reportable members under it. The leftover "Other"
+geography member from 2024 is withdrawn.
+
+Member class
+Active, Deferred and Pensioner are in the flow cube. There is no default
+member class — if a fact uses the class dimension it has to name a real
+member. Dependant is in the schema for leftover tagging and is not in the
+2025 domain.
+
+Currency (administration expenses only)
+Presentation currency remains the default. Settlement currency is reportable.
+The extension member ext:Other is the only "Other" that belongs on this
+dimension. Do not treat a same-named leftover in the core namespace as a
+currency member.
+
+Line item cubes
+Net assets keep a scheme cube. The flow lines (change in net assets and
+everything under it) keep a flow cube covering scheme, geography and member
+class.
+
+Contributions (and employer contributions under them) pick up an exclusion
+cube: they must not be tagged to Pensioner on that cube's side. That
+exclusion is not a positive cube. It is an open exclusion — Pensioner stays
+forbidden even if other dimensions appear on that same context side.
+
+Benefits paid pick up an exclusion cube for the combination Personal + Rest
+of World. That exclusion is also open: Personal + Rest of World stays
+forbidden even when another valid flow dimension (for example member class)
+is present on the same side.
+
+Both of those notAll has-hypercube relationships are open exclusions
+(xbrldt:closed="false") so an extra dimension cannot switch them off.
+
+Administration expenses pick up a currency cube, in addition to the flow
+cube on the movement lines.
+
+What was not approved
+Reinstating the 2024 scheme default. Putting member class on the scheme cube.
+Leaving Overseas or Hybrid reportable. A member-class default. Keeping the
+2024 geography Other member. Moving the contributions exclusion onto the
+wrong context side. An open admin cube. Hanging employer contributions on
+the scheme cube. Dropping the benefits-paid exclusion.

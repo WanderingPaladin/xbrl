@@ -1,0 +1,12 @@
+line_item,cube,notes
+NetAssets,CubeScheme,statement of net assets
+ChangeInNetAssets,CubeFlow,movement total
+Contributions,CubeFlow,under change in net assets
+Contributions,CubeForbiddenContributions,pensioner tagging
+EmployerContributions,CubeFlow,under contributions
+EmployerContributions,CubeForbiddenContributions,same restriction as contributions
+BenefitsPaid,CubeFlow,under change in net assets
+BenefitsPaid,CubeBenefitsExclusion,personal / rest of world combination
+InvestmentReturn,CubeFlow,under change in net assets
+AdminExpenses,CubeFlow,under change in net assets
+AdminExpenses,CubeAdmin,administration expenses only

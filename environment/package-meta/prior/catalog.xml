@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <rewriteURI uriStartString="http://lattice.example/lopt/2024-01-31/" rewritePrefix="../taxonomy/"/>
+  <rewriteURI uriStartString="http://lattice.example/lopt/roles/2024/" rewritePrefix="../taxonomy/"/>
+</catalog>

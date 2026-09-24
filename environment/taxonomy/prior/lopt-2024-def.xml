@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<linkbase xmlns="http://www.xbrl.org/2003/linkbase" xmlns:xbrldt="http://www.xbrl.org/2005/xbrldt" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <roleRef roleURI="http://lattice.example/role/2024/statement/net-assets" xlink:type="simple" xlink:href="lopt-2024-roles.xsd#stmt_net_assets" />
+  <roleRef roleURI="http://lattice.example/role/2024/cube/scheme" xlink:type="simple" xlink:href="lopt-2024-roles.xsd#cube_scheme" />
+  <roleRef roleURI="http://lattice.example/role/2024/cube/scheme-members" xlink:type="simple" xlink:href="lopt-2024-roles.xsd#cube_scheme_members" />
+  <roleRef roleURI="http://lattice.example/role/2024/cube/flow" xlink:type="simple" xlink:href="lopt-2024-roles.xsd#cube_flow" />
+  <roleRef roleURI="http://lattice.example/role/2024/defaults" xlink:type="simple" xlink:href="lopt-2024-roles.xsd#defaults" />
+  <arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/all" xlink:type="simple" xlink:href="lib/xbrldt.xsd#all" />
+  <arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-default" xlink:type="simple" xlink:href="lib/xbrldt.xsd#dimension-default" />
+  <arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple" xlink:href="lib/xbrldt.xsd#dimension-domain" />
+  <arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="lib/xbrldt.xsd#domain-member" />
+  <arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="lib/xbrldt.xsd#hypercube-dimension" />
+  <definitionLink xlink:type="extended" xlink:role="http://lattice.example/role/2024/statement/net-assets">
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_AdminExpenses" xlink:label="y24_AdminExpenses" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_BenefitsPaid" xlink:label="y24_BenefitsPaid" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_ChangeInNetAssets" xlink:label="y24_ChangeInNetAssets" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_Contributions" xlink:label="y24_Contributions" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_CubeFlow" xlink:label="y24_CubeFlow" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_CubeScheme" xlink:label="y24_CubeScheme" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_EmployerContributions" xlink:label="y24_EmployerContributions" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_InvestmentReturn" xlink:label="y24_InvestmentReturn" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_NetAssets" xlink:label="y24_NetAssets" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_StatementAbstract" xlink:label="y24_StatementAbstract" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="y24_StatementAbstract" xlink:to="y24_NetAssets" order="1.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="y24_StatementAbstract" xlink:to="y24_ChangeInNetAssets" order="2.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="y24_ChangeInNetAssets" xlink:to="y24_Contributions" order="3.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="y24_ChangeInNetAssets" xlink:to="y24_BenefitsPaid" order="4.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="y24_ChangeInNetAssets" xlink:to="y24_InvestmentReturn" order="5.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="y24_ChangeInNetAssets" xlink:to="y24_AdminExpenses" order="6.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="y24_Contributions" xlink:to="y24_EmployerContributions" order="7.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="y24_NetAssets" xlink:to="y24_CubeScheme" order="8.0" use="optional" priority="0" xbrldt:targetRole="http://lattice.example/role/2024/cube/scheme" xbrldt:contextElement="segment" xbrldt:closed="true" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="y24_ChangeInNetAssets" xlink:to="y24_CubeFlow" order="9.0" use="optional" priority="0" xbrldt:targetRole="http://lattice.example/role/2024/cube/flow" xbrldt:contextElement="segment" xbrldt:closed="false" />
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://lattice.example/role/2024/cube/scheme">
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_CubeScheme" xlink:label="y24_CubeScheme" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_SchemeDimension" xlink:label="y24_SchemeDimension" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="y24_CubeScheme" xlink:to="y24_SchemeDimension" order="1.0" use="optional" priority="0" xbrldt:targetRole="http://lattice.example/role/2024/cube/scheme-members" />
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://lattice.example/role/2024/cube/scheme-members">
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_Occupational" xlink:label="y24_Occupational" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_Personal" xlink:label="y24_Personal" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_SchemeDimension" xlink:label="y24_SchemeDimension" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_SchemeDomain" xlink:label="y24_SchemeDomain" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="y24_SchemeDimension" xlink:to="y24_SchemeDomain" order="1.0" use="optional" priority="0" xbrldt:usable="false" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="y24_SchemeDomain" xlink:to="y24_Occupational" order="2.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="y24_SchemeDomain" xlink:to="y24_Personal" order="3.0" use="optional" priority="0" />
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://lattice.example/role/2024/cube/flow">
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_CubeFlow" xlink:label="y24_CubeFlow" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_Domestic" xlink:label="y24_Domestic" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_EEA" xlink:label="y24_EEA" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_GeoDomain" xlink:label="y24_GeoDomain" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_GeographyDimension" xlink:label="y24_GeographyDimension" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_Other" xlink:label="y24_Other" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_Overseas" xlink:label="y24_Overseas" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_RestOfWorld" xlink:label="y24_RestOfWorld" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_SchemeDimension" xlink:label="y24_SchemeDimension" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="y24_CubeFlow" xlink:to="y24_SchemeDimension" order="1.0" use="optional" priority="0" xbrldt:targetRole="http://lattice.example/role/2024/cube/scheme-members" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="y24_CubeFlow" xlink:to="y24_GeographyDimension" order="2.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:from="y24_GeographyDimension" xlink:to="y24_GeoDomain" order="3.0" use="optional" priority="0" xbrldt:usable="false" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="y24_GeoDomain" xlink:to="y24_Domestic" order="4.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="y24_GeoDomain" xlink:to="y24_Overseas" order="5.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="y24_Overseas" xlink:to="y24_EEA" order="6.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="y24_Overseas" xlink:to="y24_RestOfWorld" order="7.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="y24_GeoDomain" xlink:to="y24_Other" order="8.0" use="optional" priority="0" />
+  </definitionLink>
+  <definitionLink xlink:type="extended" xlink:role="http://lattice.example/role/2024/defaults">
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_Domestic" xlink:label="y24_Domestic" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_GeographyDimension" xlink:label="y24_GeographyDimension" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_Personal" xlink:label="y24_Personal" />
+    <loc xlink:type="locator" xlink:href="lopt-2024.xsd#lopt24_SchemeDimension" xlink:label="y24_SchemeDimension" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-default" xlink:from="y24_SchemeDimension" xlink:to="y24_Personal" order="1.0" use="optional" priority="0" />
+    <definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/dimension-default" xlink:from="y24_GeographyDimension" xlink:to="y24_Domestic" order="2.0" use="optional" priority="0" />
+  </definitionLink>
+</linkbase>

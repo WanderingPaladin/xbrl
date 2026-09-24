@@ -1,0 +1,230 @@
+#!/usr/bin/env python3
+"""Production filing-gate diagnostic.
+
+Available in the agent image only. The verifier image does not include this
+command. It runs Arelle against a candidate instance and a taxonomy package
+(directory or zip) with the network disconnected.
+
+  filing-gate validate /tmp/candidate.xbrl
+  filing-gate validate /tmp/candidate.xbrl --package /app/current-package
+  filing-gate probe --concept '{http://lattice.example/lopt/2025-01-31}NetAssets' \\
+      --segment '{http://lattice.example/lopt/2025-01-31}SchemeDimension={http://lattice.example/lopt/2025-01-31}Personal'
+
+Exit status is always 0 when the diagnostic ran; read the JSON.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import subprocess
+import sys
+import tempfile
+import zipfile
+from pathlib import Path
+from xml.sax.saxutils import escape
+
+DEFAULT_PACKAGE = Path("/app/current-package")
+CANONICAL_ENTRY = "http://lattice.example/lopt/2025-01-31/lopt-2025.xsd"
+NS_XBRLI = "http://www.xbrl.org/2003/instance"
+NS_LINK = "http://www.xbrl.org/2003/linkbase"
+NS_XLINK = "http://www.w3.org/1999/xlink"
+NS_XBRLDI = "http://xbrl.org/2006/xbrldi"
+LOAD_MARKERS = (
+    "no such option",
+    "tpe:invalidDirectoryStructure",
+    "[arelle:packageLoadingError]",
+    "[IOerror]",
+    "[xbrl:schemaImportMissing]",
+    "[tpe:invalidCatalogFile]",
+    "Could not load file from local filesystem",
+    "Usage: CntlrCmdLine",
+    "Traceback (most recent call last)",
+)
+
+def _qn_parts(qn: str) -> tuple[str, str]:
+    qn = qn.strip()
+    if qn.startswith("{") and "}" in qn:
+        ns, local = qn[1:].split("}", 1)
+        return ns, local
+    if ":" in qn:
+        prefix, local = qn.split(":", 1)
+        return prefix, local
+    raise SystemExit(f"need Clark QName or prefix:local, got {qn!r}")
+
+
+def _prefix_for(ns: str, prefixes: dict[str, str]) -> str:
+    if ns in prefixes:
+        return prefixes[ns]
+    if ns == "http://lattice.example/lopt/2025-01-31":
+        prefixes[ns] = "lopt"
+        return "lopt"
+    if ns == "http://lattice.example/lopt/ext/2025-01-31":
+        prefixes[ns] = "ext"
+        return "ext"
+    name = f"ns{len(prefixes)}"
+    prefixes[ns] = name
+    return name
+
+
+def _parse_pairs(items: list[str]) -> list[tuple[str, str]]:
+    out = []
+    for raw in items:
+        if "=" not in raw:
+            raise SystemExit(f"expected dimension=member, got {raw!r}")
+        dim, mem = raw.split("=", 1)
+        out.append((dim.strip(), mem.strip()))
+    return out
+
+
+def write_instance(path: Path, concept: str, segment: list[tuple[str, str]], scenario: list[tuple[str, str]], schema_href: str) -> None:
+    prefixes: dict[str, str] = {}
+    c_ns, c_local = _qn_parts(concept)
+    c_pfx = _prefix_for(c_ns, prefixes)
+    members = segment + scenario
+    for dim, mem in members:
+        _prefix_for(_qn_parts(dim)[0], prefixes)
+        _prefix_for(_qn_parts(mem)[0], prefixes)
+
+    nsdecls = [
+        'xmlns:xbrli="http://www.xbrl.org/2003/instance"',
+        'xmlns:link="http://www.xbrl.org/2003/linkbase"',
+        'xmlns:xlink="http://www.w3.org/1999/xlink"',
+        'xmlns:xbrldi="http://xbrl.org/2006/xbrldi"',
+    ]
+    for ns, pfx in prefixes.items():
+        nsdecls.append(f'xmlns:{pfx}="{escape(ns, {chr(34): "&quot;"})}"')
+
+    def members_xml(pairs: list[tuple[str, str]]) -> str:
+        bits = []
+        for dim, mem in pairs:
+            dns, dlocal = _qn_parts(dim)
+            mns, mlocal = _qn_parts(mem)
+            bits.append(
+                f'      <xbrldi:explicitMember dimension="{_prefix_for(dns, prefixes)}:{dlocal}">'
+                f"{_prefix_for(mns, prefixes)}:{mlocal}</xbrldi:explicitMember>\n"
+            )
+        return "".join(bits)
+
+    period = (
+        "<xbrli:instant>2025-12-31</xbrli:instant>"
+        if c_local == "NetAssets"
+        else "<xbrli:startDate>2025-01-01</xbrli:startDate><xbrli:endDate>2025-12-31</xbrli:endDate>"
+    )
+    seg_inner = ""
+    if segment:
+        seg_inner = f"      <xbrli:segment>\n{members_xml(segment)}      </xbrli:segment>\n"
+    scen_xml = ""
+    if scenario:
+        scen_xml = f"    <xbrli:scenario>\n{members_xml(scenario)}    </xbrli:scenario>\n"
+
+    xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<xbrli:xbrl {' '.join(nsdecls)}>
+  <link:schemaRef xlink:type="simple" xlink:href="{escape(schema_href, {chr(34): "&quot;"})}"/>
+  <xbrli:context id="c1">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://lattice.example/entity">LATTICE</xbrli:identifier>
+{seg_inner}    </xbrli:entity>
+    <xbrli:period>{period}</xbrli:period>
+{scen_xml}  </xbrli:context>
+  <{c_pfx}:{c_local} contextRef="c1">1</{c_pfx}:{c_local}>
+</xbrli:xbrl>
+"""
+    path.write_text(xml, encoding="utf-8")
+
+
+def classify(text: str, returncode: int) -> str:
+    if any(marker in text for marker in LOAD_MARKERS):
+        return "PACKAGE_LOAD_ERROR"
+    dimensional = "[xbrldt" in text or "[xbrldte" in text or "[xbrldie" in text
+    if returncode == 0 and not dimensional:
+        return "ACCEPT"
+    if dimensional:
+        return "REJECT"
+    return "VALIDATION_ERROR"
+
+
+def run_arelle(instance: Path, package: Path) -> dict:
+    cmd = [
+        sys.executable,
+        "-m",
+        "arelle.CntlrCmdLine",
+        "--internetConnectivity=offline",
+        "--packages",
+        str(package),
+        "--file",
+        str(instance),
+        "--validate",
+        "--logLevel",
+        "ERROR",
+    ]
+    try:
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=180)
+    except FileNotFoundError:
+        return {"accepted": False, "category": "PACKAGE_LOAD_ERROR", "detail": "arelle is not installed"}
+    except subprocess.TimeoutExpired:
+        return {"accepted": False, "category": "PACKAGE_LOAD_ERROR", "detail": "arelle timed out"}
+    blob = (proc.stdout or "") + "\n" + (proc.stderr or "")
+    category = classify(blob, proc.returncode)
+    result = {"accepted": category == "ACCEPT", "category": category}
+    if category != "ACCEPT":
+        result["detail"] = blob[-2000:]
+    return result
+
+
+def package_archive(package: Path, work: Path) -> Path:
+    """Arelle --packages wants a Taxonomy Package zip. Directories are wrapped, not modified."""
+    if package.is_file():
+        if not zipfile.is_zipfile(package):
+            raise SystemExit(f"package is not a zip: {package}")
+        return package
+    if not package.is_dir():
+        raise SystemExit(f"package not found: {package}")
+    if not (package / "META-INF").is_dir() or not (package / "taxonomy").is_dir():
+        raise SystemExit(f"directory package must contain META-INF and taxonomy: {package}")
+    dest = work / "taxonomy-package.zip"
+    name = package.name or "package"
+    with zipfile.ZipFile(dest, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+        for path in sorted(package.rglob("*")):
+            if path.is_file() and not path.is_symlink():
+                relative = path.relative_to(package).as_posix()
+                zf.write(path, f"{name}/{relative}")
+    return dest
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(prog="filing-gate")
+    sub = parser.add_subparsers(dest="cmd", required=True)
+
+    p_val = sub.add_parser("validate")
+    p_val.add_argument("instance")
+    p_val.add_argument("--package", default=str(DEFAULT_PACKAGE))
+
+    p_probe = sub.add_parser("probe")
+    p_probe.add_argument("--concept", required=True)
+    p_probe.add_argument("--segment", action="append", default=[])
+    p_probe.add_argument("--scenario", action="append", default=[])
+    p_probe.add_argument("--package", default=str(DEFAULT_PACKAGE))
+
+    args = parser.parse_args()
+    package = Path(args.package)
+    with tempfile.TemporaryDirectory() as tmp:
+        work = Path(tmp)
+        archive = package_archive(package, work)
+        if args.cmd == "validate":
+            result = run_arelle(Path(args.instance), archive)
+        else:
+            inst = work / "probe.xbrl"
+            write_instance(
+                inst,
+                args.concept,
+                _parse_pairs(args.segment),
+                _parse_pairs(args.scenario),
+                CANONICAL_ENTRY,
+            )
+            result = run_arelle(inst, archive)
+    json.dump(result, sys.stdout, indent=2)
+    sys.stdout.write("\n")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:link="http://www.xbrl.org/2003/linkbase" targetNamespace="http://www.xbrl.org/2005/xbrldt" elementFormDefault="qualified">
+  <annotation>
+    <appinfo>
+      <link:arcroleType id="all" cyclesAllowed="undirected" arcroleURI="http://xbrl.org/int/dim/arcrole/all">
+        <link:definition>all</link:definition>
+        <link:usedOn>link:definitionArc</link:usedOn>
+      </link:arcroleType>
+      <link:arcroleType id="notAll" cyclesAllowed="undirected" arcroleURI="http://xbrl.org/int/dim/arcrole/notAll">
+        <link:definition>notAll</link:definition>
+        <link:usedOn>link:definitionArc</link:usedOn>
+      </link:arcroleType>
+      <link:arcroleType id="hypercube-dimension" cyclesAllowed="undirected" arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension">
+        <link:definition>hypercube-dimension</link:definition>
+        <link:usedOn>link:definitionArc</link:usedOn>
+      </link:arcroleType>
+      <link:arcroleType id="dimension-domain" cyclesAllowed="undirected" arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain">
+        <link:definition>dimension-domain</link:definition>
+        <link:usedOn>link:definitionArc</link:usedOn>
+      </link:arcroleType>
+      <link:arcroleType id="domain-member" cyclesAllowed="undirected" arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member">
+        <link:definition>domain-member</link:definition>
+        <link:usedOn>link:definitionArc</link:usedOn>
+      </link:arcroleType>
+      <link:arcroleType id="dimension-default" cyclesAllowed="undirected" arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-default">
+        <link:definition>dimension-default</link:definition>
+        <link:usedOn>link:definitionArc</link:usedOn>
+      </link:arcroleType>
+    </appinfo>
+  </annotation>
+</schema>

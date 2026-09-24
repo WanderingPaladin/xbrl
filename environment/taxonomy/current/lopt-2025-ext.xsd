@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xbrli="http://www.xbrl.org/2003/instance" targetNamespace="http://lattice.example/lopt/ext/2025-01-31" elementFormDefault="qualified">
+  <element name="Other" id="ext_Other" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+</schema>

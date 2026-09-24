@@ -1,0 +1,18 @@
+Shadow validation log extract — production filing-gate (incomplete)
+
+These lines were copied from overnight runs against the unfinished 2025
+package. Categories are production labels, not a repair checklist. Several
+runs were truncated. Do not treat a missing concept as evidence that the
+line item was withdrawn.
+
+2025-03-02T02:14:11Z concept=NetAssets category=DIMENSION_CLOSED_CUBE accepted=false
+2025-03-02T02:14:11Z note=extra geography member on a statement-of-position context
+2025-03-02T02:16:40Z concept=NetAssets category=DIMENSION_MEMBER_NOT_USABLE accepted=false
+2025-03-02T02:16:40Z note=hybrid heading used as a reported scheme member
+2025-03-02T02:21:03Z concept=Contributions category=DIMENSION_INVALID accepted=false
+2025-03-02T02:21:03Z note=pensioner on the scenario side of the contributions fact
+2025-03-02T02:44:18Z concept=BenefitsPaid category=DIMENSION_INVALID accepted=false
+2025-03-02T04:01:55Z [truncated — disk full on the logging sidecar]
+2025-03-03T11:12:09Z concept=AdminExpenses category=DIMENSION_CLOSED_CUBE accepted=false
+2025-03-03T11:12:09Z note=member class appeared on the currency side
+2025-03-04T08:00:02Z gate restarted; prior 400 lines not retained

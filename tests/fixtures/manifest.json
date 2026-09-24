@@ -1,0 +1,463 @@
+{
+  "primary_items": {
+    "{http://lattice.example/lopt/2025-01-31}NetAssets": {
+      "all": [
+        {
+          "cube": "{http://lattice.example/lopt/2025-01-31}CubeScheme",
+          "closed": true,
+          "contextElement": "segment",
+          "dimensions": {
+            "{http://lattice.example/lopt/2025-01-31}SchemeDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}CashBalance",
+                "{http://lattice.example/lopt/2025-01-31}MixedBenefit",
+                "{http://lattice.example/lopt/2025-01-31}Occupational",
+                "{http://lattice.example/lopt/2025-01-31}Personal"
+              ],
+              "default": "{http://lattice.example/lopt/2025-01-31}Occupational"
+            }
+          }
+        }
+      ],
+      "notAll": []
+    },
+    "{http://lattice.example/lopt/2025-01-31}ChangeInNetAssets": {
+      "all": [
+        {
+          "cube": "{http://lattice.example/lopt/2025-01-31}CubeFlow",
+          "closed": false,
+          "contextElement": "segment",
+          "dimensions": {
+            "{http://lattice.example/lopt/2025-01-31}SchemeDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}CashBalance",
+                "{http://lattice.example/lopt/2025-01-31}MixedBenefit",
+                "{http://lattice.example/lopt/2025-01-31}Occupational",
+                "{http://lattice.example/lopt/2025-01-31}Personal"
+              ],
+              "default": "{http://lattice.example/lopt/2025-01-31}Occupational"
+            },
+            "{http://lattice.example/lopt/2025-01-31}GeographyDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}Domestic",
+                "{http://lattice.example/lopt/2025-01-31}EEA",
+                "{http://lattice.example/lopt/2025-01-31}RestOfWorld"
+              ],
+              "default": "{http://lattice.example/lopt/2025-01-31}Domestic"
+            },
+            "{http://lattice.example/lopt/2025-01-31}MemberClassDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}Active",
+                "{http://lattice.example/lopt/2025-01-31}Deferred",
+                "{http://lattice.example/lopt/2025-01-31}Pensioner"
+              ]
+            }
+          }
+        }
+      ],
+      "notAll": []
+    },
+    "{http://lattice.example/lopt/2025-01-31}Contributions": {
+      "all": [
+        {
+          "cube": "{http://lattice.example/lopt/2025-01-31}CubeFlow",
+          "closed": false,
+          "contextElement": "segment",
+          "dimensions": {
+            "{http://lattice.example/lopt/2025-01-31}SchemeDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}CashBalance",
+                "{http://lattice.example/lopt/2025-01-31}MixedBenefit",
+                "{http://lattice.example/lopt/2025-01-31}Occupational",
+                "{http://lattice.example/lopt/2025-01-31}Personal"
+              ],
+              "default": "{http://lattice.example/lopt/2025-01-31}Occupational"
+            },
+            "{http://lattice.example/lopt/2025-01-31}GeographyDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}Domestic",
+                "{http://lattice.example/lopt/2025-01-31}EEA",
+                "{http://lattice.example/lopt/2025-01-31}RestOfWorld"
+              ],
+              "default": "{http://lattice.example/lopt/2025-01-31}Domestic"
+            },
+            "{http://lattice.example/lopt/2025-01-31}MemberClassDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}Active",
+                "{http://lattice.example/lopt/2025-01-31}Deferred",
+                "{http://lattice.example/lopt/2025-01-31}Pensioner"
+              ]
+            }
+          }
+        }
+      ],
+      "notAll": [
+        {
+          "cube": "{http://lattice.example/lopt/2025-01-31}CubeForbiddenContributions",
+          "closed": false,
+          "contextElement": "scenario",
+          "dimensions": {
+            "{http://lattice.example/lopt/2025-01-31}MemberClassDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}Pensioner"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "{http://lattice.example/lopt/2025-01-31}EmployerContributions": {
+      "all": [
+        {
+          "cube": "{http://lattice.example/lopt/2025-01-31}CubeFlow",
+          "closed": false,
+          "contextElement": "segment",
+          "dimensions": {
+            "{http://lattice.example/lopt/2025-01-31}SchemeDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}CashBalance",
+                "{http://lattice.example/lopt/2025-01-31}MixedBenefit",
+                "{http://lattice.example/lopt/2025-01-31}Occupational",
+                "{http://lattice.example/lopt/2025-01-31}Personal"
+              ],
+              "default": "{http://lattice.example/lopt/2025-01-31}Occupational"
+            },
+            "{http://lattice.example/lopt/2025-01-31}GeographyDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}Domestic",
+                "{http://lattice.example/lopt/2025-01-31}EEA",
+                "{http://lattice.example/lopt/2025-01-31}RestOfWorld"
+              ],
+              "default": "{http://lattice.example/lopt/2025-01-31}Domestic"
+            },
+            "{http://lattice.example/lopt/2025-01-31}MemberClassDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}Active",
+                "{http://lattice.example/lopt/2025-01-31}Deferred",
+                "{http://lattice.example/lopt/2025-01-31}Pensioner"
+              ]
+            }
+          }
+        }
+      ],
+      "notAll": [
+        {
+          "cube": "{http://lattice.example/lopt/2025-01-31}CubeForbiddenContributions",
+          "closed": false,
+          "contextElement": "scenario",
+          "dimensions": {
+            "{http://lattice.example/lopt/2025-01-31}MemberClassDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}Pensioner"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "{http://lattice.example/lopt/2025-01-31}BenefitsPaid": {
+      "all": [
+        {
+          "cube": "{http://lattice.example/lopt/2025-01-31}CubeFlow",
+          "closed": false,
+          "contextElement": "segment",
+          "dimensions": {
+            "{http://lattice.example/lopt/2025-01-31}SchemeDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}CashBalance",
+                "{http://lattice.example/lopt/2025-01-31}MixedBenefit",
+                "{http://lattice.example/lopt/2025-01-31}Occupational",
+                "{http://lattice.example/lopt/2025-01-31}Personal"
+              ],
+              "default": "{http://lattice.example/lopt/2025-01-31}Occupational"
+            },
+            "{http://lattice.example/lopt/2025-01-31}GeographyDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}Domestic",
+                "{http://lattice.example/lopt/2025-01-31}EEA",
+                "{http://lattice.example/lopt/2025-01-31}RestOfWorld"
+              ],
+              "default": "{http://lattice.example/lopt/2025-01-31}Domestic"
+            },
+            "{http://lattice.example/lopt/2025-01-31}MemberClassDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}Active",
+                "{http://lattice.example/lopt/2025-01-31}Deferred",
+                "{http://lattice.example/lopt/2025-01-31}Pensioner"
+              ]
+            }
+          }
+        }
+      ],
+      "notAll": [
+        {
+          "cube": "{http://lattice.example/lopt/2025-01-31}CubeBenefitsExclusion",
+          "closed": false,
+          "contextElement": "segment",
+          "dimensions": {
+            "{http://lattice.example/lopt/2025-01-31}SchemeDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}Personal"
+              ],
+              "default": "{http://lattice.example/lopt/2025-01-31}Occupational"
+            },
+            "{http://lattice.example/lopt/2025-01-31}GeographyDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}RestOfWorld"
+              ],
+              "default": "{http://lattice.example/lopt/2025-01-31}Domestic"
+            }
+          }
+        }
+      ]
+    },
+    "{http://lattice.example/lopt/2025-01-31}InvestmentReturn": {
+      "all": [
+        {
+          "cube": "{http://lattice.example/lopt/2025-01-31}CubeFlow",
+          "closed": false,
+          "contextElement": "segment",
+          "dimensions": {
+            "{http://lattice.example/lopt/2025-01-31}SchemeDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}CashBalance",
+                "{http://lattice.example/lopt/2025-01-31}MixedBenefit",
+                "{http://lattice.example/lopt/2025-01-31}Occupational",
+                "{http://lattice.example/lopt/2025-01-31}Personal"
+              ],
+              "default": "{http://lattice.example/lopt/2025-01-31}Occupational"
+            },
+            "{http://lattice.example/lopt/2025-01-31}GeographyDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}Domestic",
+                "{http://lattice.example/lopt/2025-01-31}EEA",
+                "{http://lattice.example/lopt/2025-01-31}RestOfWorld"
+              ],
+              "default": "{http://lattice.example/lopt/2025-01-31}Domestic"
+            },
+            "{http://lattice.example/lopt/2025-01-31}MemberClassDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}Active",
+                "{http://lattice.example/lopt/2025-01-31}Deferred",
+                "{http://lattice.example/lopt/2025-01-31}Pensioner"
+              ]
+            }
+          }
+        }
+      ],
+      "notAll": []
+    },
+    "{http://lattice.example/lopt/2025-01-31}AdminExpenses": {
+      "all": [
+        {
+          "cube": "{http://lattice.example/lopt/2025-01-31}CubeFlow",
+          "closed": false,
+          "contextElement": "segment",
+          "dimensions": {
+            "{http://lattice.example/lopt/2025-01-31}SchemeDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}CashBalance",
+                "{http://lattice.example/lopt/2025-01-31}MixedBenefit",
+                "{http://lattice.example/lopt/2025-01-31}Occupational",
+                "{http://lattice.example/lopt/2025-01-31}Personal"
+              ],
+              "default": "{http://lattice.example/lopt/2025-01-31}Occupational"
+            },
+            "{http://lattice.example/lopt/2025-01-31}GeographyDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}Domestic",
+                "{http://lattice.example/lopt/2025-01-31}EEA",
+                "{http://lattice.example/lopt/2025-01-31}RestOfWorld"
+              ],
+              "default": "{http://lattice.example/lopt/2025-01-31}Domestic"
+            },
+            "{http://lattice.example/lopt/2025-01-31}MemberClassDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}Active",
+                "{http://lattice.example/lopt/2025-01-31}Deferred",
+                "{http://lattice.example/lopt/2025-01-31}Pensioner"
+              ]
+            }
+          }
+        },
+        {
+          "cube": "{http://lattice.example/lopt/2025-01-31}CubeAdmin",
+          "closed": true,
+          "contextElement": "scenario",
+          "dimensions": {
+            "{http://lattice.example/lopt/2025-01-31}CurrencyDimension": {
+              "usable": [
+                "{http://lattice.example/lopt/2025-01-31}PresentationCurrency",
+                "{http://lattice.example/lopt/2025-01-31}SettlementCurrency",
+                "{http://lattice.example/lopt/ext/2025-01-31}Other"
+              ],
+              "default": "{http://lattice.example/lopt/2025-01-31}PresentationCurrency"
+            }
+          }
+        }
+      ],
+      "notAll": []
+    }
+  },
+  "hierarchies": {
+    "scheme": [
+      {
+        "from": "{http://lattice.example/lopt/2025-01-31}SchemeDomain",
+        "to": "{http://lattice.example/lopt/2025-01-31}Occupational",
+        "usable": true
+      },
+      {
+        "from": "{http://lattice.example/lopt/2025-01-31}SchemeDomain",
+        "to": "{http://lattice.example/lopt/2025-01-31}Personal",
+        "usable": true
+      },
+      {
+        "from": "{http://lattice.example/lopt/2025-01-31}SchemeDomain",
+        "to": "{http://lattice.example/lopt/2025-01-31}HybridGroup",
+        "usable": false
+      },
+      {
+        "from": "{http://lattice.example/lopt/2025-01-31}HybridGroup",
+        "to": "{http://lattice.example/lopt/2025-01-31}CashBalance",
+        "usable": true
+      },
+      {
+        "from": "{http://lattice.example/lopt/2025-01-31}HybridGroup",
+        "to": "{http://lattice.example/lopt/2025-01-31}MixedBenefit",
+        "usable": true
+      }
+    ],
+    "geography": [
+      {
+        "from": "{http://lattice.example/lopt/2025-01-31}GeoDomain",
+        "to": "{http://lattice.example/lopt/2025-01-31}Domestic",
+        "usable": true
+      },
+      {
+        "from": "{http://lattice.example/lopt/2025-01-31}GeoDomain",
+        "to": "{http://lattice.example/lopt/2025-01-31}Overseas",
+        "usable": false
+      },
+      {
+        "from": "{http://lattice.example/lopt/2025-01-31}Overseas",
+        "to": "{http://lattice.example/lopt/2025-01-31}EEA",
+        "usable": true
+      },
+      {
+        "from": "{http://lattice.example/lopt/2025-01-31}Overseas",
+        "to": "{http://lattice.example/lopt/2025-01-31}RestOfWorld",
+        "usable": true
+      }
+    ],
+    "memberClass": [
+      {
+        "from": "{http://lattice.example/lopt/2025-01-31}MemberClassDomain",
+        "to": "{http://lattice.example/lopt/2025-01-31}Active",
+        "usable": true
+      },
+      {
+        "from": "{http://lattice.example/lopt/2025-01-31}MemberClassDomain",
+        "to": "{http://lattice.example/lopt/2025-01-31}Deferred",
+        "usable": true
+      },
+      {
+        "from": "{http://lattice.example/lopt/2025-01-31}MemberClassDomain",
+        "to": "{http://lattice.example/lopt/2025-01-31}Pensioner",
+        "usable": true
+      }
+    ]
+  },
+  "primary_item_relationships": [
+    {
+      "source": "{http://lattice.example/lopt/2025-01-31}StatementAbstract",
+      "target": "{http://lattice.example/lopt/2025-01-31}NetAssets",
+      "arcrole": "http://xbrl.org/int/dim/arcrole/domain-member",
+      "elr": "http://lattice.example/role/2025/statement/net-assets",
+      "targetRole": null
+    },
+    {
+      "source": "{http://lattice.example/lopt/2025-01-31}StatementAbstract",
+      "target": "{http://lattice.example/lopt/2025-01-31}ChangeInNetAssets",
+      "arcrole": "http://xbrl.org/int/dim/arcrole/domain-member",
+      "elr": "http://lattice.example/role/2025/statement/net-assets",
+      "targetRole": null
+    },
+    {
+      "source": "{http://lattice.example/lopt/2025-01-31}ChangeInNetAssets",
+      "target": "{http://lattice.example/lopt/2025-01-31}Contributions",
+      "arcrole": "http://xbrl.org/int/dim/arcrole/domain-member",
+      "elr": "http://lattice.example/role/2025/statement/net-assets",
+      "targetRole": null
+    },
+    {
+      "source": "{http://lattice.example/lopt/2025-01-31}ChangeInNetAssets",
+      "target": "{http://lattice.example/lopt/2025-01-31}BenefitsPaid",
+      "arcrole": "http://xbrl.org/int/dim/arcrole/domain-member",
+      "elr": "http://lattice.example/role/2025/statement/net-assets",
+      "targetRole": null
+    },
+    {
+      "source": "{http://lattice.example/lopt/2025-01-31}ChangeInNetAssets",
+      "target": "{http://lattice.example/lopt/2025-01-31}InvestmentReturn",
+      "arcrole": "http://xbrl.org/int/dim/arcrole/domain-member",
+      "elr": "http://lattice.example/role/2025/statement/net-assets",
+      "targetRole": null
+    },
+    {
+      "source": "{http://lattice.example/lopt/2025-01-31}ChangeInNetAssets",
+      "target": "{http://lattice.example/lopt/2025-01-31}AdminExpenses",
+      "arcrole": "http://xbrl.org/int/dim/arcrole/domain-member",
+      "elr": "http://lattice.example/role/2025/statement/net-assets",
+      "targetRole": null
+    },
+    {
+      "source": "{http://lattice.example/lopt/2025-01-31}Contributions",
+      "target": "{http://lattice.example/lopt/2025-01-31}EmployerContributions",
+      "arcrole": "http://xbrl.org/int/dim/arcrole/domain-member",
+      "elr": "http://lattice.example/role/2025/statement/net-assets",
+      "targetRole": null
+    }
+  ],
+  "direct_hypercubes": [
+    {
+      "source": "{http://lattice.example/lopt/2025-01-31}NetAssets",
+      "cube": "{http://lattice.example/lopt/2025-01-31}CubeScheme",
+      "arcrole": "http://xbrl.org/int/dim/arcrole/all",
+      "elr": "http://lattice.example/role/2025/statement/net-assets",
+      "closed": true,
+      "contextElement": "segment"
+    },
+    {
+      "source": "{http://lattice.example/lopt/2025-01-31}ChangeInNetAssets",
+      "cube": "{http://lattice.example/lopt/2025-01-31}CubeFlow",
+      "arcrole": "http://xbrl.org/int/dim/arcrole/all",
+      "elr": "http://lattice.example/role/2025/statement/net-assets",
+      "closed": false,
+      "contextElement": "segment"
+    },
+    {
+      "source": "{http://lattice.example/lopt/2025-01-31}Contributions",
+      "cube": "{http://lattice.example/lopt/2025-01-31}CubeForbiddenContributions",
+      "arcrole": "http://xbrl.org/int/dim/arcrole/notAll",
+      "elr": "http://lattice.example/role/2025/statement/net-assets",
+      "closed": false,
+      "contextElement": "scenario"
+    },
+    {
+      "source": "{http://lattice.example/lopt/2025-01-31}BenefitsPaid",
+      "cube": "{http://lattice.example/lopt/2025-01-31}CubeBenefitsExclusion",
+      "arcrole": "http://xbrl.org/int/dim/arcrole/notAll",
+      "elr": "http://lattice.example/role/2025/statement/net-assets",
+      "closed": false,
+      "contextElement": "segment"
+    },
+    {
+      "source": "{http://lattice.example/lopt/2025-01-31}AdminExpenses",
+      "cube": "{http://lattice.example/lopt/2025-01-31}CubeAdmin",
+      "arcrole": "http://xbrl.org/int/dim/arcrole/all",
+      "elr": "http://lattice.example/role/2025/statement/net-assets",
+      "closed": true,
+      "contextElement": "scenario"
+    }
+  ]
+}

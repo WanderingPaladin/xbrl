@@ -1,0 +1,45 @@
+schema_version = "2.0"
+name = "xbrl-drs-filing-acceptance"
+artifacts = ["/app/out/repaired-taxonomy.zip"]
+
+[metadata]
+author_name = "Riley"
+author_email = "anonymous"
+category = "Operations"
+subcategory = "Compliance"
+tags = ["xbrl", "dimensions", "taxonomy-package", "linkbase", "regulatory-reporting"]
+languages = ["python"]
+difficulty = "frontier"
+expert_time_estimate_hours = 10
+
+difficulty_explanation = """\
+A taxonomy engineer has to recover an offline-loadable 2025 Taxonomy Package whose effective DRS is not written down as an algorithm. Last year's package, a damaged current package, a board delta, a thin cube list, incomplete production logs, a handful of marked filings, and a filing-gate diagnostic that disappears at grade time are each insufficient alone. Copying 2024, keeping 2025, or patching only public marks yields a zip that loads and still fails interacting closed/open cubes, targetRole member trees, usable headings, notAll vs all, implied defaults, segment vs scenario, inheritance, and equivalent-arc priority on other line items.\
+"""
+
+solution_explanation = """\
+Treat the memo as the approved 2025 business delta, the 2024 package as the encoding of unchanged DRS mechanics, filing-gate as a spec-level probe, and the marks as known cases only. Rebuild a self-contained 2025 Taxonomy Package (META-INF metadata, catalog, 2025 entry point, offline standard schemas) so net assets keep a closed scheme cube, flow items inherit an open scheme/geography/member-class cube, contributions add an open scenario notAll on Pensioner, benefits paid add an open segment notAll for Personal+RestOfWorld, and admin expenses add a closed scenario currency cube. Zip that self-contained package.\
+"""
+
+verification_explanation = """\
+The verifier unpacks the zip without following traversal or symlink entries and does not execute candidate files. It parses Taxonomy Package metadata and the OASIS catalog, requires the entry point taxonomy/lopt-2025.xsd inside the Taxonomy Package's single top-level directory, and follows that submitted schema's imports and definition linkbaseRefs reachable through the submitted DTS. Effective DRS, member hierarchies, period types and filing contexts are taken from the submitted DTS, then compared to a sealed authored manifest. Pinned Arelle loads the candidate zip with the network disconnected. Serialization may vary; a detached linkbase, a 2024 copy, or missing standard schemas fail. Reward-producing tests grade only the submitted zip; canonical mutant and variant checks are authoring-time verifier regressions.\
+"""
+
+relevant_experience = """\
+Professional experience with XBRL taxonomy development and maintenance, including XBRL Dimensions, definition linkbases, dimensional relationship sets, Taxonomy Packages, OASIS XML Catalogs, XML Schema, and offline DTS validation. Familiarity with regulatory-reporting taxonomy migrations, diagnosing broken dimensional relationships, and validating filings with tools such as Arelle is directly relevant.\
+"""
+
+[verifier]
+timeout_sec = 1800
+network_mode = "no-network"
+environment_mode = "separate"
+
+[agent]
+timeout_sec = 3600
+network_mode = "no-network"
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 900
+cpus = 2
+memory_mb = 8192
+storage_mb = 10240

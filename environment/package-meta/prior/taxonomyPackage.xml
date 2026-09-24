@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tp:taxonomyPackage xmlns:tp="http://xbrl.org/2016/taxonomy-package" xml:lang="en">
+  <tp:identifier>http://lattice.example/lopt/taxonomy-package/2024</tp:identifier>
+  <tp:name>Lattice Occupational Pensions 2024</tp:name>
+  <tp:version>2024-01-31</tp:version>
+  <tp:entryPoints>
+    <tp:entryPoint>
+      <tp:name>LOPT 2024</tp:name>
+      <tp:entryPointDocument href="../taxonomy/lopt-2024.xsd"/>
+    </tp:entryPoint>
+  </tp:entryPoints>
+</tp:taxonomyPackage>

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://lattice.example/lopt/2025-01-31" elementFormDefault="qualified">
+  <annotation>
+    <appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="lopt-2025-def.xml" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+    </appinfo>
+  </annotation>
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" />
+  <import namespace="http://lattice.example/lopt/ext/2025-01-31" schemaLocation="lopt-2025-ext.xsd" />
+  <import namespace="http://www.xbrl.org/2005/xbrldt" schemaLocation="lib/xbrldt.xsd" />
+  <element name="StatementAbstract" id="lopt_StatementAbstract" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="NetAssets" id="lopt_NetAssets" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant" />
+  <element name="ChangeInNetAssets" id="lopt_ChangeInNetAssets" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />
+  <element name="Contributions" id="lopt_Contributions" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />
+  <element name="EmployerContributions" id="lopt_EmployerContributions" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />
+  <element name="BenefitsPaid" id="lopt_BenefitsPaid" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />
+  <element name="InvestmentReturn" id="lopt_InvestmentReturn" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />
+  <element name="AdminExpenses" id="lopt_AdminExpenses" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" />
+  <element name="CubeScheme" id="lopt_CubeScheme" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="CubeFlow" id="lopt_CubeFlow" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="CubeForbiddenContributions" id="lopt_CubeForbiddenContributions" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="CubeAdmin" id="lopt_CubeAdmin" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="CubeBenefitsExclusion" id="lopt_CubeBenefitsExclusion" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="CubeLegacy" id="lopt_CubeLegacy" type="xbrli:stringItemType" substitutionGroup="xbrldt:hypercubeItem" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="SchemeDimension" id="lopt_SchemeDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="GeographyDimension" id="lopt_GeographyDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="MemberClassDimension" id="lopt_MemberClassDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="CurrencyDimension" id="lopt_CurrencyDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="ValuationDimension" id="lopt_ValuationDimension" type="xbrli:stringItemType" substitutionGroup="xbrldt:dimensionItem" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="SchemeDomain" id="lopt_SchemeDomain" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="Occupational" id="lopt_Occupational" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="Personal" id="lopt_Personal" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="HybridGroup" id="lopt_HybridGroup" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="CashBalance" id="lopt_CashBalance" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="MixedBenefit" id="lopt_MixedBenefit" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="GeoDomain" id="lopt_GeoDomain" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="Domestic" id="lopt_Domestic" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="Overseas" id="lopt_Overseas" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="EEA" id="lopt_EEA" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="RestOfWorld" id="lopt_RestOfWorld" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="Other" id="lopt_Other" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="MemberClassDomain" id="lopt_MemberClassDomain" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="Active" id="lopt_Active" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="Deferred" id="lopt_Deferred" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="Pensioner" id="lopt_Pensioner" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="Dependant" id="lopt_Dependant" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="CurrencyDomain" id="lopt_CurrencyDomain" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="PresentationCurrency" id="lopt_PresentationCurrency" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="SettlementCurrency" id="lopt_SettlementCurrency" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="ValuationDomain" id="lopt_ValuationDomain" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="Ongoing" id="lopt_Ongoing" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+  <element name="Windup" id="lopt_Windup" type="xbrli:stringItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="duration" abstract="true" />
+</schema>

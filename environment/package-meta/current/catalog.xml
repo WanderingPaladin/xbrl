@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <rewriteURI uriStartString="http://lattice.example/lopt/2025-01-31/" rewritePrefix="../taxonomy/"/>
+  <rewriteURI uriStartString="http://lattice.example/lopt/ext/2025-01-31/" rewritePrefix="../taxonomy/"/>
+  <rewriteURI uriStartString="http://lattice.example/lopt/roles/2025/" rewritePrefix="../taxonomy/"/>
+  <rewriteURI uriStartString="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" rewritePrefix="../taxonomy/lib/xbrl-instance-2003-12-31.xsd"/>
+  <rewriteURI uriStartString="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" rewritePrefix="../taxonomy/lib/xbrl-linkbase-2003-12-31.xsd"/>
+  <rewriteURI uriStartString="http://www.xbrl.org/2003/xl-2003-12-31.xsd" rewritePrefix="../taxonomy/lib/xl-2003-12-31.xsd"/>
+  <rewriteURI uriStartString="http://www.xbrl.org/2003/xlink-2003-12-31.xsd" rewritePrefix="../taxonomy/lib/xlink-2003-12-31.xsd"/>
+  <rewriteURI uriStartString="http://www.xbrl.org/2005/xbrldt-2005.xsd" rewritePrefix="../taxonomy/lib/xbrldt-2005.xsd"/>
+  <rewriteURI uriStartString="http://www.xbrl.org/2006/xbrldi-2006.xsd" rewritePrefix="../taxonomy/lib/xbrldi-2006.xsd"/>
+  <rewriteURI uriStartString="http://xbrl.org/2006/xbrldi-2006.xsd" rewritePrefix="../taxonomy/lib/xbrldi-2006.xsd"/>
+  <rewriteURI uriStartString="http://www.w3.org/2001/xml.xsd" rewritePrefix="../taxonomy/lib/xml.xsd"/>
+  <rewriteURI uriStartString="http://www.w3.org/1999/xlink" rewritePrefix="../taxonomy/lib/xlink-2003-12-31.xsd"/>
+  <rewriteURI uriStartString="http://www.xbrl.org/2003/XLink" rewritePrefix="../taxonomy/lib/xl-2003-12-31.xsd"/>
+  <rewriteURI uriStartString="http://xbrl.org/2005/xbrldt" rewritePrefix="../taxonomy/lib/xbrldt-2005.xsd"/>
+  <rewriteURI uriStartString="http://xbrl.org/2006/xbrldi" rewritePrefix="../taxonomy/lib/xbrldi-2006.xsd"/>
+  <rewriteURI uriStartString="http://www.xbrl.org/2003/instance" rewritePrefix="../taxonomy/lib/xbrl-instance-2003-12-31.xsd"/>
+  <rewriteURI uriStartString="http://www.xbrl.org/2003/" rewritePrefix="../taxonomy/lib/"/>
+  <rewriteURI uriStartString="http://www.xbrl.org/2005/" rewritePrefix="../taxonomy/lib/"/>
+  <rewriteURI uriStartString="http://www.xbrl.org/2006/" rewritePrefix="../taxonomy/lib/"/>
+  <rewriteURI uriStartString="http://xbrl.org/2006/" rewritePrefix="../taxonomy/lib/"/>
+</catalog>

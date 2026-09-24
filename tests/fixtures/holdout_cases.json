@@ -1,0 +1,367 @@
+[
+  {
+    "id": "acc-benefits-implied-row",
+    "concept": "{http://lattice.example/lopt/2025-01-31}BenefitsPaid",
+    "segment": [
+      [
+        "{http://lattice.example/lopt/2025-01-31}GeographyDimension",
+        "{http://lattice.example/lopt/2025-01-31}RestOfWorld"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}MemberClassDimension",
+        "{http://lattice.example/lopt/2025-01-31}Active"
+      ]
+    ],
+    "scenario": [],
+    "expect": "accept",
+    "isolates": [
+      "benefits_exclusion",
+      "default_scheme"
+    ]
+  },
+  {
+    "id": "rej-benefits-personal-row-active",
+    "concept": "{http://lattice.example/lopt/2025-01-31}BenefitsPaid",
+    "segment": [
+      [
+        "{http://lattice.example/lopt/2025-01-31}SchemeDimension",
+        "{http://lattice.example/lopt/2025-01-31}Personal"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}GeographyDimension",
+        "{http://lattice.example/lopt/2025-01-31}RestOfWorld"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}MemberClassDimension",
+        "{http://lattice.example/lopt/2025-01-31}Active"
+      ]
+    ],
+    "scenario": [],
+    "expect": "reject",
+    "isolates": [
+      "benefits_exclusion_open"
+    ]
+  },
+  {
+    "id": "acc-benefits-personal-eea",
+    "concept": "{http://lattice.example/lopt/2025-01-31}BenefitsPaid",
+    "segment": [
+      [
+        "{http://lattice.example/lopt/2025-01-31}SchemeDimension",
+        "{http://lattice.example/lopt/2025-01-31}Personal"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}GeographyDimension",
+        "{http://lattice.example/lopt/2025-01-31}EEA"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}MemberClassDimension",
+        "{http://lattice.example/lopt/2025-01-31}Active"
+      ]
+    ],
+    "scenario": [],
+    "expect": "accept",
+    "isolates": [
+      "benefits_exclusion"
+    ]
+  },
+  {
+    "id": "rej-contrib-pensioner-scen-extra",
+    "concept": "{http://lattice.example/lopt/2025-01-31}Contributions",
+    "segment": [
+      [
+        "{http://lattice.example/lopt/2025-01-31}SchemeDimension",
+        "{http://lattice.example/lopt/2025-01-31}Personal"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}MemberClassDimension",
+        "{http://lattice.example/lopt/2025-01-31}Active"
+      ]
+    ],
+    "scenario": [
+      [
+        "{http://lattice.example/lopt/2025-01-31}MemberClassDimension",
+        "{http://lattice.example/lopt/2025-01-31}Pensioner"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}CurrencyDimension",
+        "{http://lattice.example/lopt/2025-01-31}SettlementCurrency"
+      ]
+    ],
+    "expect": "reject",
+    "isolates": [
+      "contributions_exclusion_open"
+    ]
+  },
+  {
+    "id": "rej-employer-pensioner-scen-extra",
+    "concept": "{http://lattice.example/lopt/2025-01-31}EmployerContributions",
+    "segment": [
+      [
+        "{http://lattice.example/lopt/2025-01-31}SchemeDimension",
+        "{http://lattice.example/lopt/2025-01-31}Personal"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}MemberClassDimension",
+        "{http://lattice.example/lopt/2025-01-31}Active"
+      ]
+    ],
+    "scenario": [
+      [
+        "{http://lattice.example/lopt/2025-01-31}MemberClassDimension",
+        "{http://lattice.example/lopt/2025-01-31}Pensioner"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}CurrencyDimension",
+        "{http://lattice.example/lopt/2025-01-31}SettlementCurrency"
+      ]
+    ],
+    "expect": "reject",
+    "isolates": [
+      "contributions_exclusion_open",
+      "inherited_forbidden"
+    ]
+  },
+  {
+    "id": "acc-employer-flow",
+    "concept": "{http://lattice.example/lopt/2025-01-31}EmployerContributions",
+    "segment": [
+      [
+        "{http://lattice.example/lopt/2025-01-31}SchemeDimension",
+        "{http://lattice.example/lopt/2025-01-31}Personal"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}GeographyDimension",
+        "{http://lattice.example/lopt/2025-01-31}EEA"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}MemberClassDimension",
+        "{http://lattice.example/lopt/2025-01-31}Active"
+      ]
+    ],
+    "scenario": [],
+    "expect": "accept",
+    "isolates": [
+      "employer_not_scheme_cube"
+    ]
+  },
+  {
+    "id": "acc-invest-pensioner-seg",
+    "concept": "{http://lattice.example/lopt/2025-01-31}InvestmentReturn",
+    "segment": [
+      [
+        "{http://lattice.example/lopt/2025-01-31}SchemeDimension",
+        "{http://lattice.example/lopt/2025-01-31}Personal"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}GeographyDimension",
+        "{http://lattice.example/lopt/2025-01-31}EEA"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}MemberClassDimension",
+        "{http://lattice.example/lopt/2025-01-31}Pensioner"
+      ]
+    ],
+    "scenario": [],
+    "expect": "accept",
+    "isolates": [
+      "notAll_scope"
+    ]
+  },
+  {
+    "id": "acc-contrib-pensioner-seg",
+    "concept": "{http://lattice.example/lopt/2025-01-31}Contributions",
+    "segment": [
+      [
+        "{http://lattice.example/lopt/2025-01-31}SchemeDimension",
+        "{http://lattice.example/lopt/2025-01-31}Personal"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}GeographyDimension",
+        "{http://lattice.example/lopt/2025-01-31}EEA"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}MemberClassDimension",
+        "{http://lattice.example/lopt/2025-01-31}Pensioner"
+      ]
+    ],
+    "scenario": [],
+    "expect": "accept",
+    "isolates": [
+      "segment_scenario"
+    ]
+  },
+  {
+    "id": "rej-admin-explicit-default",
+    "concept": "{http://lattice.example/lopt/2025-01-31}AdminExpenses",
+    "segment": [
+      [
+        "{http://lattice.example/lopt/2025-01-31}SchemeDimension",
+        "{http://lattice.example/lopt/2025-01-31}Personal"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}MemberClassDimension",
+        "{http://lattice.example/lopt/2025-01-31}Active"
+      ]
+    ],
+    "scenario": [
+      [
+        "{http://lattice.example/lopt/2025-01-31}CurrencyDimension",
+        "{http://lattice.example/lopt/2025-01-31}PresentationCurrency"
+      ]
+    ],
+    "expect": "reject",
+    "isolates": [
+      "explicit_default"
+    ]
+  },
+  {
+    "id": "acc-admin-settlement",
+    "concept": "{http://lattice.example/lopt/2025-01-31}AdminExpenses",
+    "segment": [
+      [
+        "{http://lattice.example/lopt/2025-01-31}SchemeDimension",
+        "{http://lattice.example/lopt/2025-01-31}Personal"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}MemberClassDimension",
+        "{http://lattice.example/lopt/2025-01-31}Active"
+      ]
+    ],
+    "scenario": [
+      [
+        "{http://lattice.example/lopt/2025-01-31}CurrencyDimension",
+        "{http://lattice.example/lopt/2025-01-31}SettlementCurrency"
+      ]
+    ],
+    "expect": "accept",
+    "isolates": [
+      "admin_closed"
+    ]
+  },
+  {
+    "id": "rej-admin-lopt-other",
+    "concept": "{http://lattice.example/lopt/2025-01-31}AdminExpenses",
+    "segment": [
+      [
+        "{http://lattice.example/lopt/2025-01-31}SchemeDimension",
+        "{http://lattice.example/lopt/2025-01-31}Personal"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}MemberClassDimension",
+        "{http://lattice.example/lopt/2025-01-31}Active"
+      ]
+    ],
+    "scenario": [
+      [
+        "{http://lattice.example/lopt/2025-01-31}CurrencyDimension",
+        "{http://lattice.example/lopt/2025-01-31}Other"
+      ]
+    ],
+    "expect": "reject",
+    "isolates": [
+      "expanded_qname"
+    ]
+  },
+  {
+    "id": "rej-dependant",
+    "concept": "{http://lattice.example/lopt/2025-01-31}InvestmentReturn",
+    "segment": [
+      [
+        "{http://lattice.example/lopt/2025-01-31}SchemeDimension",
+        "{http://lattice.example/lopt/2025-01-31}Personal"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}GeographyDimension",
+        "{http://lattice.example/lopt/2025-01-31}EEA"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}MemberClassDimension",
+        "{http://lattice.example/lopt/2025-01-31}Dependant"
+      ]
+    ],
+    "scenario": [],
+    "expect": "reject",
+    "isolates": [
+      "arc_priority",
+      "dependant_excluded"
+    ]
+  },
+  {
+    "id": "rej-geo-lopt-other",
+    "concept": "{http://lattice.example/lopt/2025-01-31}InvestmentReturn",
+    "segment": [
+      [
+        "{http://lattice.example/lopt/2025-01-31}SchemeDimension",
+        "{http://lattice.example/lopt/2025-01-31}Personal"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}GeographyDimension",
+        "{http://lattice.example/lopt/2025-01-31}Other"
+      ]
+    ],
+    "scenario": [],
+    "expect": "reject",
+    "isolates": [
+      "unapproved_geo_other"
+    ]
+  },
+  {
+    "id": "rej-invest-omit-mc",
+    "concept": "{http://lattice.example/lopt/2025-01-31}InvestmentReturn",
+    "segment": [
+      [
+        "{http://lattice.example/lopt/2025-01-31}SchemeDimension",
+        "{http://lattice.example/lopt/2025-01-31}Personal"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}GeographyDimension",
+        "{http://lattice.example/lopt/2025-01-31}EEA"
+      ]
+    ],
+    "scenario": [],
+    "expect": "reject",
+    "isolates": [
+      "open_flow",
+      "no_memberclass_default"
+    ]
+  },
+  {
+    "id": "acc-invest-eea",
+    "concept": "{http://lattice.example/lopt/2025-01-31}InvestmentReturn",
+    "segment": [
+      [
+        "{http://lattice.example/lopt/2025-01-31}SchemeDimension",
+        "{http://lattice.example/lopt/2025-01-31}Personal"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}GeographyDimension",
+        "{http://lattice.example/lopt/2025-01-31}EEA"
+      ],
+      [
+        "{http://lattice.example/lopt/2025-01-31}MemberClassDimension",
+        "{http://lattice.example/lopt/2025-01-31}Deferred"
+      ]
+    ],
+    "scenario": [],
+    "expect": "accept",
+    "isolates": [
+      "geo_children"
+    ]
+  },
+  {
+    "id": "change-in-net-assets-reportable",
+    "concept": "{http://lattice.example/lopt/2025-01-31}ChangeInNetAssets",
+    "segment": [
+      [
+        "{http://lattice.example/lopt/2025-01-31}MemberClassDimension",
+        "{http://lattice.example/lopt/2025-01-31}Active"
+      ]
+    ],
+    "scenario": [],
+    "expect": "accept",
+    "isolates": [
+      "reportable_movement_total"
+    ]
+  }
+]
